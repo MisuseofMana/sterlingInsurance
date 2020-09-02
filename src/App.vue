@@ -68,7 +68,6 @@
 </template>
 
 <script>
-import "@/assets/styles/globals.css";
 
 import HeaderBlock from "@/components/HeaderBlock";
 import HomeBlock from "@/components/HomeBlock";
@@ -144,5 +143,43 @@ export default {
 
   .linkedIn {
     filter: invert(1);
+  }
+
+  .text {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .item {
+    padding: 18px 0;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .9s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+
+  .box-card {
+    width: 80%;
+    margin:10px auto;
+  }
+
+  .box-card p {
+    font-size:20px;
+  }
+
+  .box-card h1 {
+    font-size:30px;
+  }
+
+  p {
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  h1 {
+    font-family:Arial, Helvetica, sans-serif;
+    text-align:center;
   }
 </style>

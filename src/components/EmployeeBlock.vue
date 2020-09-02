@@ -56,16 +56,5 @@ import SchedulingBlock from '@/components/SchedulingBlock'
 </script>
 
 <style scoped>
-/* Default Styles */
 
-
-/* Mobile Portrait */
-@media (min-width: 667px) {
-
-}
-
-/* Tablets */
-@media (min-width: 768px) {
-
-}
 </style>
