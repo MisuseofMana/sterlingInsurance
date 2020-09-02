@@ -68,15 +68,15 @@
 </template>
 
 <script>
-import "@/assets/styles/global.css"
+import "@/assets/styles/globals.css";
 
-import HeaderBlock from "./components/HeaderBlock";
-import HomeBlock from "./components/HomeBlock";
-import SchedulingBlock from "./components/SchedulingBlock";
-import TeamBlock from "./components/TeamBlock";
-import ServeBlock from "./components/ServeBlock";
-import EmployeeBlock from "./components/EmployeeBlock";
-import MedicareBlock from "./components/MedicareBlock";
+import HeaderBlock from "@/components/HeaderBlock";
+import HomeBlock from "@/components/HomeBlock";
+import SchedulingBlock from "@/components/SchedulingBlock";
+import TeamBlock from "@/components/TeamBlock";
+import ServeBlock from "@/components/ServeBlock";
+import EmployeeBlock from "@/components/EmployeeBlock";
+import MedicareBlock from "@/components/MedicareBlock";
 
 export default {
   name: 'app',
@@ -92,8 +92,6 @@ export default {
   data() {
     return {
       activeIndex: '1',
-      
-      
     }
   },
   methods: {
