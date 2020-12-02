@@ -1,15 +1,18 @@
 <template>
     <div>
-      <el-card shadow="always"  key="benefits" class="box-card">
+      <div class="card">
+          <h1>Employee Benefits</h1>
+      </div>
+
+      <div class="card flexRow">
+
+        <div>
+          <img src="@/assets/imgs/employee.jpg" alt="">
+        </div>
+        
         <div class="text item">
-            
-          <h1>EMPLOYEE BENEFITS</h1>
 
-            <el-image
-            style="width: 100%;"
-            :src="employeeUrl"></el-image>
-
-          <p>Finding the right employee insurance can feel like an stalemate game of chess.</p>
+          <p>Finding the right employee insurance can feel like a stalemate game of chess.</p>
 
           <p>
             Now more than ever, key employees are scrutinizing employee benefit programs and prioritizing organizations that are forward thinking, with rich benefit plans and perks at the top of their lists.
@@ -32,29 +35,20 @@
           </p>
           
         </div>
-      </el-card>
-
-      <scheduling-block/>
+      </div>
     </div>
 </template>
 
 <script>
 
-import SchedulingBlock from '@/components/SchedulingBlock'
-
     export default {
         name:'EmployeeBlock',
-        components: {
-          SchedulingBlock
-        },
-        data() {
-          return {
-            employeeUrl: require('@/assets/imgs/employee.jpg')
-          }
-        },
     }
 </script>
 
 <style scoped>
-
+  img {
+    width:90%;
+     margin:20px;
+  }
 </style>

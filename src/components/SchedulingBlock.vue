@@ -1,65 +1,49 @@
 <template>
-    <div key="schedule">
-        <el-card shadow="always" class="box-card" >
-          <div class="text item schedule">
-            <h1>SCHEDULE WITH US</h1>
-            
-            <el-image
-              style="width: 10%;"
-              :src="heartUrl"></el-image>
+  <section>
+    <section class="card">
+        <h1>Schedule a Consultation</h1>
+    </section>
 
-            <p>Ready to get started? Click below to schedule a consultation with one of our outstanding team members.</p>
+    <section class="card flexRow">
+      <section class="leftImage">
+        <img src="@/assets/imgs/schedule.png" alt="">
+      </section>
 
-            <section class="scheduleButtons">
-              <el-button type="primary" round icon="el-icon-user-solid">
-                  <a target="_blank" href="https://calendly.com/sterling-group-health/group-health-care-consultation?month=2020-09">
-                    IN PERSON MEETING
-                  </a>
-              </el-button>
+      <section>
+        <p>Ready to get started? Click below to schedule a consultation with one of our outstanding team members.</p>
 
-              <el-button type="primary" round icon='el-icon-video-camera'>
-                <a target="_blank" href="https://calendly.com/sterling-group-health/group-health-care-consultation-zoom?month=2020-09">
-                ZOOM MEETING
-                </a>
-              </el-button>
-            </section>
-            
-
-          </div>
-        </el-card>
-        </div>
+        <section class="flexRow">
+          <a href=" https://calendly.com/sterling-group-health/group-health-care-consultation-zoom" target="_blank"><button>Schedule an In Person Consultation</button></a>
+          <a href=" https://calendly.com/sterling-group-health/group-health-care-consultation-zoom" target="_blank"><button>Schedule an Online Zoom Consultation</button></a>
+        </section>
+      </section>
+        
+    </section>
+  </section>
 </template>
 
 <script>
-
-
-
     export default {
-        data() {
-            return {
-                heartUrl: require('@/assets/imgs/heartShield.png'),
-            }
-        },
     }
 </script>
 
 <style scoped>
-  .scheduleButtons {
-    margin:10px 0;
+  a button {
+    background:var(--primary);
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    margin:10px;
+    font-size:1vw;
+    color:white;
   }
 
-  .schedule {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+  a button:hover {
+    cursor:pointer;
+    background:var(--primaryHover)
   }
 
-a {
-    text-decoration: none;
-}
-
-  a:visited {
-      color:white;
+  .leftImage img {
+    height:500px;
   }
 </style>

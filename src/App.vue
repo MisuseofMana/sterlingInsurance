@@ -1,185 +1,36 @@
 <template>
   <div id="app">
-    <el-container>
 
-      <!-- HEADER -->
-      <header-block :index="activeIndex" key="home" @switch-page="changePage($event)"/>
+      <HeaderBlock/>
 
-      <!-- MAIN -->
-      <el-main>
-        <transition name="fade" mode="out-in">
+      <main>
+          <transition name="fade" mode="out-in">
+            <router-view :key="$route.fullPath"></router-view>
+          </transition>
+      </main>
 
-        <!-- INTRO -->
-        <div key="home" v-if="activeIndex==='1'">
-          <home-block />
-          <scheduling-block/>
-        </div>
-        
-        <!-- SCHEDULE WITH US -->
-        <div key="scheduling" v-else-if="activeIndex==='2'">
-          <scheduling-block/>
-          <team-block/>
-        </div>
-
-        <!-- WHO WE SERVE -->
-        <serve-block key="serve" v-else-if="activeIndex==='3'"/>
-
-        <!-- EMPLOYEE BENEFITS -->
-        <employee-block key="employee" v-else-if="activeIndex==='4'"/>
-        
-        <!-- MEDICARE -->
-        <medicare-block key="medicare" v-else-if="activeIndex==='5'"/>
-
-        </transition>
-      </el-main>
-
-    <el-footer height="170px">
-      <section>
-      <h1>Find Us</h1>
-      <p>402 West Main Street, Greenwood, IN 46142</p>
-      <p>
-        <i class="el-icon-phone-outline">
-          (317)885-9105
-        </i>
-        </p>
-      <p>
-        <i class="el-icon-message">
-        <a href="mailto:tom@sterlinginsgrp.com"> tom@sterlinginsgrp.com</a>
-        </i>
-      </p>
-      </section>
-
-      <section class="social">
-        <h1>Social Media</h1>
-        <a target="_blank" href="https://www.linkedin.com/company/sterlinginsgrp/">
-          <img class="linkedIn" src="@/assets/imgs/linkedin.png" alt="">
-        </a>
-        <a target="_blank" href="https://www.linkedin.com/company/sterlinginsgrp/">
-          <img src="@/assets/imgs/facebook.png" alt="">
-        </a>
-      </section>
-      <section>
-        <p>Site updated 9/1/2020</p>
-      </section>
-    </el-footer>
-      
-    </el-container>
+      <FooterComponent/>
+   
   </div>
 </template>
 
 <script>
+import './assets/styles/global.css'
+import './assets/styles/transitions.css'
 
 import HeaderBlock from "@/components/HeaderBlock";
-import HomeBlock from "@/components/HomeBlock";
-import SchedulingBlock from "@/components/SchedulingBlock";
-import TeamBlock from "@/components/TeamBlock";
-import ServeBlock from "@/components/ServeBlock";
-import EmployeeBlock from "@/components/EmployeeBlock";
-import MedicareBlock from "@/components/MedicareBlock";
+import FooterComponent from "@/components/FooterComponent";
+
 
 export default {
   name: 'app',
   components: {
     HeaderBlock,
-    HomeBlock,
-    SchedulingBlock,
-    TeamBlock,
-    ServeBlock,
-    EmployeeBlock,
-    MedicareBlock,
-  },
-  data() {
-    return {
-      activeIndex: '1',
-    }
-  },
-  methods: {
-    changePage(page) {
-      this.activeIndex = page; 
-    }
+    FooterComponent
   },
 }
 </script>
 
 <style>
-    body > .el-container {
-      margin-bottom: 40px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-  
-  .el-main {
-    background-color: #fff;
-    color: #333;
-    text-align: left;
-    line-height: 30px;
-  }
-  
-    .el-footer {
-    background-color: #0E70B6;
-    font-family:Arial, Helvetica, sans-serif;
-    color: #fff;
-    text-align: center;
-    display:flex;
-    justify-content:space-evenly;
-    align-items:top;
-  }
 
-  a {
-    color:white;
-    text-decoration:none;
-  }
-
-  a:hover {
-    color:#3eafff;
-  }
-
-  .social img {
-    width:50px;
-  }
-
-  .social a {
-    margin:0 10px;
-  }
-
-  .linkedIn {
-    filter: invert(1);
-  }
-
-  .text {
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  .item {
-    padding: 18px 0;
-  }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .9s;
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
-  }
-
-  .box-card {
-    width: 80%;
-    margin:10px auto;
-  }
-
-  .box-card p {
-    font-size:20px;
-  }
-
-  .box-card h1 {
-    font-size:30px;
-  }
-
-  p {
-    font-family:Arial, Helvetica, sans-serif;
-  }
-
-  h1 {
-    font-family:Arial, Helvetica, sans-serif;
-    text-align:center;
-  }
 </style>

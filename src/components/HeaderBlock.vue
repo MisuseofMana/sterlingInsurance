@@ -1,26 +1,22 @@
 <template>
-     <el-header height="150px">
+  <header class="flexRow">
+    <section class="flexColumn">
+      <img src="@/assets/imgs/sterling-insurance-logo-no-text.png" alt="Sterling Insurance Logo - Three Rings interlocked, they are colored green, yellow, and blue.">
+    </section>
 
-        <section>
-          <h1>STERLING INSURANCE GROUP</h1>
-          <p>The insurance help you've been looking for.</p>
-        </section>
-
-        <el-menu
-          :default-active="index"
-          class="el-menu-demo"
-          mode="horizontal"
-          @select="handleSelect"
-          background-color="#fff"
-          text-color="#000"
-          active-text-color="#0E70B6">
-          <el-menu-item index="1">Home</el-menu-item>
-          <el-menu-item index="2">Scheduling</el-menu-item>
-          <el-menu-item index="3">Who We Serve</el-menu-item>
-          <el-menu-item index="4">Employee Benefits</el-menu-item>
-          <el-menu-item index="5">Medicare</el-menu-item>
-        </el-menu>
-      </el-header>
+    <section>
+      <h1>"Putting clients before commissions since 1997".</h1>
+    </section>
+  
+    <section>
+      <router-link to="/" exact>Home</router-link>
+      <router-link to="who-we-serve">Who We Serve</router-link>
+      <router-link to="our-team">Your Team</router-link>
+      <router-link to="scheduling">Schedule</router-link>
+      <router-link to="employee">Employee Benefits</router-link>
+      <router-link to="medicare">Medicare</router-link>
+    </section>
+  </header>
 </template>
 
 <script>
@@ -36,27 +32,34 @@
 </script>
 
 <style scoped>
- .el-header {
-    background-color: #fff;
-    color: #333;
-    text-align: center;
-    display:flex;
-    justify-content:space-evenly;
-    align-items:center;
+  header {
+    color: black;
+    padding:10px 0;
+    margin:0 0 20px 0;
   }
 
-  .el-header h1 {
+  header h1 {
     color:black;
-    font-size:25px;
+    font-size:1vw;
   }
 
-    .el-menu-item {
-    font-family: Arial, Helvetica, sans-serif;
+  img {
+    width:200px;
   }
-  
-  .el-header p {
+
+  .router-link-exact-active {
+    color:var(--primary);
+    border-bottom:2px solid var(--primary);
+  }
+
+  a {
     color:black;
-    font-size:15px;
-    line-height:0px;
+    text-decoration:none;
+    margin:10px;
+    padding:10px;
+  }
+
+  a:hover {
+    color:var(--primaryHover);
   }
 </style>
